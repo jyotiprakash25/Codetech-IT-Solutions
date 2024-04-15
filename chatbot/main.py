@@ -17,8 +17,11 @@ def send_message():
     u = user_entry.get()
     user = Label(chat_bg,height=1,width=64,bg="#a6a6a6",fg="black",text=u+" <You ",font=12,anchor="w")
     user.place(x=xi,y=yi)
-    if "hello" in u:
+    if "hi" in u:
         bot = Label(chat_bg,height=1,width=64,bg="white",fg="black",text="Bot> Hello",font=12,anchor="w")
+        bot.place(x=xi,y=yi+25)
+    elif "hello" in u:
+        bot = Label(chat_bg,height=1,width=64,bg="white",fg="black",text="Bot> hi ",font=12,anchor="w")
         bot.place(x=xi,y=yi+25)
     elif "how are you?" in u:
         bot = Label(chat_bg,height=1,width=64,bg="white",fg="black",text="Bot> I am fine",font=12,anchor="w")
@@ -57,7 +60,7 @@ user_entry.insert(0,"Enter message...")
 user_entry.config(fg="#5c5a5a")
 user_entry.bind("<FocusIn>",on_enter)
 user_entry.bind("<FocusOut>", on_leave)
-send_button = Button(sendbtn_bg,height=1,width=3,bg="#0084ff",text=">", font=("helvectica",20),
+send_button = Button(sendbtn_bg,height=1,width=3,bg="#0084ff",text="🤖", font=("helvectica",20),
                      activebackground="white",fg= "white", relief=FLAT,border=0,
                      activeforeground="#0084ff",command=send_message)
 
